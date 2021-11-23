@@ -1,3 +1,7 @@
+package hotel;
+import rooms.Room;
+import employees.Staff;
+
 import java.util.ArrayList;
 import java.io.Serializable;
 
@@ -14,9 +18,9 @@ public class Hotel implements Serializable {
     // Constructor
     public Hotel(String name) {
         setName(name);
-        listOfRooms = null;
-        listOfStaff = null;
-        listOfBookings = null;
+        listOfRooms = new ArrayList<>();
+        listOfStaff = new ArrayList<>();
+        listOfBookings = new ArrayList<>();
     }
 
     // getters

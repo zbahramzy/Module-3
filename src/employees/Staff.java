@@ -1,3 +1,4 @@
+package employees;
 import java.io.Serializable;
 
 public abstract class Staff implements Serializable {
@@ -54,4 +55,8 @@ public abstract class Staff implements Serializable {
     }
 
     // toString
+    public String toString() {
+        return "TITLE: " + title + "\n" + "FIRST NAME: " + firstName + "\n" + "LAST NAME: " +
+                lastName + "\n" + "PHONE NUMBER: " + phoneNumber + "\n" + "SALARY: " + salary + " kr.\n";
+    }
 }

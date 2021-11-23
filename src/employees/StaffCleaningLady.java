@@ -1,3 +1,5 @@
+package employees;
+
 public class StaffCleaningLady extends Staff {
 
     public StaffCleaningLady(String title, String firstName, String lastName, int phoneNumber, double salary) {

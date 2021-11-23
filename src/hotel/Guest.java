@@ -1,3 +1,5 @@
+package hotel;
+
 import java.io.Serializable;
 
 public class Guest implements Serializable {

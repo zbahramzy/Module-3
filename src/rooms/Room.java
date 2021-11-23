@@ -1,3 +1,5 @@
+package rooms;
+
 import java.io.Serializable;
 
 public abstract class Room implements Serializable {
