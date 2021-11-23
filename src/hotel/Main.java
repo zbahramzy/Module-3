@@ -1,10 +1,10 @@
 package hotel;
 import employees.Staff;
-import employees.StaffUser;
 import employees.StaffAccountant;
 import employees.StaffCleaningLady;
 import employees.StaffDirector;
 import employees.StaffReceptionist;
+import employees.StaffUser;
 import rooms.RoomDoubleBed;
 import rooms.RoomOneBed;
 import rooms.RoomSuite;
@@ -85,21 +85,28 @@ public class Main {
         hotelPlaza.getListOfStaff().add(director);
         hotelPlaza.getListOfStaff().add(receptionist);
 
-        // Create 6 room objects
-        RoomOneBed rOB0 = new RoomOneBed(01,0,1,300);
-        RoomDoubleBed rDB0 = new RoomDoubleBed(02, 0, 2, 450);
-        RoomSuite rS0 = new RoomSuite(03, 0,2,700);
-        RoomOneBed rOB1 = new RoomOneBed(14,1,1,300);
-        RoomDoubleBed rDB1 = new RoomDoubleBed(15, 1, 2, 450);
-        RoomSuite rS1 = new RoomSuite(16, 1,2,700);
+        RoomSuite roomSuite1 = new RoomSuite(13 ,3,2, 1500.00,
+                true, true, true, true, true, true, true, true, true, true);
+        RoomSuite roomSuite2 = new RoomSuite( 23,3,2, 1000.00,
+                false, false, true, true, false, true, false, false, true, false);
+
+        RoomDoubleBed roomDoubleBed1 = new RoomDoubleBed(12,2,2, 850.00,
+                true, true, true, true, true, true, true);
+        RoomDoubleBed roomDoubleBed2 = new RoomDoubleBed(22,2, 2, 750.00,
+                false, false, true, false, false, false, true);
+
+        RoomOneBed roomOneBed1 = new RoomOneBed(11,1,1, 500.00,
+                true, true, true, true, true);
+        RoomOneBed roomOneBed2 = new RoomOneBed(21,1,1, 450.00,
+                false, false, false, false, true);
 
         // Add these 6 rooms to listOfStaff in hotel
-        hotelPlaza.getListOfRooms().add(rOB0);
-        hotelPlaza.getListOfRooms().add(rDB0);
-        hotelPlaza.getListOfRooms().add(rS0);
-        hotelPlaza.getListOfRooms().add(rOB1);
-        hotelPlaza.getListOfRooms().add(rDB1);
-        hotelPlaza.getListOfRooms().add(rS1);
+        hotelPlaza.getListOfRooms().add(roomSuite1);
+        hotelPlaza.getListOfRooms().add(roomSuite2);
+        hotelPlaza.getListOfRooms().add(roomOneBed1);
+        hotelPlaza.getListOfRooms().add(roomOneBed2);
+        hotelPlaza.getListOfRooms().add(roomDoubleBed1);
+        hotelPlaza.getListOfRooms().add(roomDoubleBed2);
 
         // Write to the Database.ser file
         serialize(hotelPlaza, "Database.ser");
@@ -107,10 +114,10 @@ public class Main {
 
         // Read from the Database.ser file
         hotelPlaza = deSerialize( "Database.ser");
+        //hotelPlaza.getListOfRooms().forEach(System.out::println);
+        //System.out.println(hotelPlaza.getListOfRooms().get(1).totalPriceRoom(12,true));
 
-        menu.userInterface(hotelPlaza.getListOfStaff(), loggedInEmployee);
-
-
+        //menu.userInterface(hotelPlaza.getListOfStaff(), loggedInEmployee);
 
     } // main method ends here
 

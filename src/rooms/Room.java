@@ -64,4 +64,25 @@ public abstract class Room implements Serializable {
     }
 
     // toString
+    @Override
+    public String toString() {
+        return "roomNumber: " + roomNumber +
+                "\nfloorNumber: " + floorNumber +
+                "\nnumberOfBeds: " + numberOfBeds +
+                "\npricePerNight: " + pricePerNight +
+                "\ninternetAccess: " + translate(internetAccess)+
+                "\nisOccupied: " + translate(isOccupied);
+    }
+
+    // translate boolean to string(yes/no)
+    public String translate(boolean trueOrFalse) {
+        return trueOrFalse ? "Yes" : "No";
+    }
+    //calculate internet price for room
+    public double totalPriceRoom( int numberOfNights, boolean internetAccess) {
+        double totalPrice = numberOfNights * pricePerNight;
+        if(internetAccess)
+            totalPrice += 100;
+        return totalPrice;
+    }
 }
